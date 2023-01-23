@@ -17,11 +17,11 @@ class HomePage extends StatelessWidget {
             title: Text(FakeData.todo[index].title),
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        DetailScreen(todo: FakeData.todo[index]),
-                  ));
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailScreen(),
+                    settings: RouteSettings(arguments: FakeData.todo[index])),
+              );
             },
           );
         },

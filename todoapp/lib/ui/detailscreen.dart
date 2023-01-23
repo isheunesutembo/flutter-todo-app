@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:todoapp/models/todo.dart';
 
 class DetailScreen extends StatelessWidget {
-  final Todo todo;
-  const DetailScreen({super.key, required this.todo});
+  
+  const DetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final todo=ModalRoute.of(context)!.settings.arguments as Todo;
     return Scaffold(
       appBar: AppBar(
         title: Text(todo.title),
